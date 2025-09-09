@@ -9,12 +9,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { columns, statistic } from "./statistic/column"
-import { DataTable } from "./statistic/data-table"
+import { columns, statistic } from "../components/column"
+import { DataTable } from "../components/data-table"
+import { Button } from "@/components/ui/button";
 
 
-async function getData(): Promise<statistic[]> {
-  // Fetch data from your API here.
+async function getData(team: "A" | "B"): Promise<statistic[]> {
+  if(team=== "A"){
   return [
     {
       id: "23",
@@ -27,10 +28,26 @@ async function getData(): Promise<statistic[]> {
     },
     // ...
   ]
+  }
+  else{
+    return [
+    {
+      id: "45",
+      name: "Mahefa",
+      point: 10,
+      rebound: 14,
+      assist:3,
+      fouls:5,
+      outOfBounds:4
+    },
+    // ...
+  ]
+  }
 }
 
 export default async function Home() {
-    const data = await getData()
+    const dataA = await getData("A")
+     const dataB = await getData("B")
   return (
    <>
       <section>
@@ -44,7 +61,11 @@ export default async function Home() {
               TEAM A
             </CardTitle>
           </CardHeader>
-          88
+          <div className="flex justify-center items-center">
+            <Button className="text-4xl">-</Button>
+            88
+            <Button className="text-4xl">+</Button>
+          </div>
         </Card>
       <h1 className="text-9xl text-center pt-[50]">
         VS
@@ -56,15 +77,19 @@ export default async function Home() {
               TEAM B
             </CardTitle>
           </CardHeader>
-          88
+          <div className="flex justify-center items-center">
+            <Button className="text-4xl">-</Button>
+            88
+            <Button className="text-4xl">+</Button>
+          </div>
         </Card>
     </section>
     <section className="flex justify-arround ">
           <div className="container mx-auto py-10 px-10">
-            <DataTable columns={columns} data={data} />
+            <DataTable columns={columns} data={dataA} />
           </div>
           <div className="container mx-auto py-10 px-10">
-            <DataTable columns={columns} data={data} />
+            <DataTable columns={columns} data={dataB} />
           </div>
     </section>
    </>

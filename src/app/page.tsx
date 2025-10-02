@@ -26,7 +26,7 @@ async function getData(team: "A" | "B"): Promise<statistic[]> {
     return [
       {
         id: "45",
-        name: "Mahefa",
+        name: "Mahef",
         point: 10,
         rebound: 14,
         assist: 3,
@@ -46,7 +46,7 @@ export default function Home() {
     { id: "23", name: "Paul", point: 12, rebound: 5, assist: 15, fouls: 4, outOfBounds: 5 }
   ]);
   const [dataB] = useState<statistic[]>([
-    { id: "45", name: "Mahefa", point: 10, rebound: 14, assist: 3, fouls: 5, outOfBounds: 4 }
+    { id: "45", name: "Mahef", point: 10, rebound: 14, assist: 3, fouls: 5, outOfBounds: 4 }
   ]);
 
   return (
@@ -84,7 +84,7 @@ export default function Home() {
           </CardHeader>
           <div className="flex justify-center items-center gap-4">
             <Button className="text-4xl" onClick={() => setScoreB(scoreB - 1)}>-</Button>
-            <span className="text-7xl">{scoreB}</span>
+            <span className="text-7xl ">{scoreB}</span>
             <Button className="text-4xl" onClick={() => setScoreB(scoreB + 1)}>+</Button>
           </div>
         </Card>

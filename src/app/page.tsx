@@ -61,12 +61,12 @@ export default function Home() {
         <Card className="w-[40vw] text-center text-9xl">
           <CardHeader>
             <CardTitle className="text-6xl">
-              TEAM A
+              <input type="text" className="text-center" placeholder="Team A"></input>
             </CardTitle>
           </CardHeader>
           <div className="flex justify-center items-center gap-4">
             <Button className="text-4xl" onClick={() => setScoreA(scoreA - 1)}>-</Button>
-            <span className="text-7xl">{scoreA}</span>
+            <span className="text-9xl" style={{fontFamily:"Tektur"}}>{scoreA}</span>
             <Button className="text-4xl" onClick={() => setScoreA(scoreA + 1)}>+</Button>
           </div>
         </Card>
@@ -79,12 +79,12 @@ export default function Home() {
         <Card className="w-[40vw] text-center text-9xl">
           <CardHeader>
             <CardTitle className="text-6xl">
-              TEAM B
+              <input type="text" className="text-center" placeholder="Team B"></input>
             </CardTitle>
           </CardHeader>
           <div className="flex justify-center items-center gap-4">
             <Button className="text-4xl" onClick={() => setScoreB(scoreB - 1)}>-</Button>
-            <span className="text-7xl ">{scoreB}</span>
+            <span className="text-9xl " style={{fontFamily:"Tektur"}}>{scoreB}</span>
             <Button className="text-4xl" onClick={() => setScoreB(scoreB + 1)}>+</Button>
           </div>
         </Card>
